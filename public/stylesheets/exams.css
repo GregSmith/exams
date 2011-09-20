@@ -16,6 +16,50 @@
         border-bottom: 3px dotted #77d;
 }
 
+/* START:mainlayout */
+/* Styles for main page */
+
+#banner {
+  background: url("/images/bg-nav.png");
+	padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #ccc;
+  text-align: center;
+}
+
+#banner img {
+  float: left;	
+}
+
+#columns {
+  background: #999;
+}
+
+#main {
+  margin-left: 17em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 16em;
+  background: #999;
+}
+
+#side a {
+  color: #226;
+  font-size: medium;
+}
+/* END:mainlayout */
+
+
 /* Styles for products/index */
 
 #product_list table {
@@ -109,4 +153,8 @@
   color: #44a;
   font-weight: bold;
   margin-right: 2em;
+}
+
+#store .entry form, #store .entry form div {
+display: inline;
 }

@@ -181,3 +181,31 @@ border-top: 1px dotted #777;
 border-bottom: 1px dotted #777;
 margin-bottom: 10px;
 }
+
+/* Styles for order form */
+.checkout_form fieldset {
+background: #efe;
+}
+.checkout_form legend {
+color: #dfd;
+background: #141;
+font-family: sans-serif;
+padding: 0.2em 1em;
+}
+.checkout_form label {
+width: 5em;
+float: left;
+text-align: right;
+padding-top: 0.2em;
+margin-right: 0.1em;
+display: block;
+}
+.checkout_form select, .checkout_form textarea, .checkout_form input {
+margin-left: 0.5em;
+}
+.checkout_form .submit {
+margin-left: 4em;
+}
+.checkout_form div {
+margin: 0.5em 0;
+}

@@ -1,4 +1,16 @@
 Exams::Application.configure do
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    :address            => "smtp.gmail.com",
+    :port               => 587,
+    :domain             => "alpha-score.com",
+    :authentication     => "plain",
+    :user_name          => "greg.smith",
+    :password           => "Ginger#5",
+    :enable_starttls_auto => true
+  }
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -16,6 +28,8 @@ Exams::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  
+  
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

@@ -1,4 +1,6 @@
 Exams::Application.routes.draw do
+  resources :payment_notifications
+
   resources :orders
 
   resources :line_items
@@ -6,6 +8,10 @@ Exams::Application.routes.draw do
   resources :carts
 
   get "store/index"
+  
+  resources :products do
+    get :who_bought, :on => :member
+  end
   
   root :to => "store#index", :as => "store"
   

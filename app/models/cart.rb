@@ -37,6 +37,6 @@ class Cart < ActiveRecord::Base
         "quantity_#{index+1}" => item.quantity
       })
     end
-    "https://www.sandbox.paypal.com/cgi-bin/webscr?"+values.map {|k,v| "#{k}=#{v}"}.join("&")
+    "https://www.sandbox.paypal.com/cgi-bin/webscr?"+values.to_query
   end
 end

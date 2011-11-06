@@ -7,6 +7,11 @@
     <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
   </tr>
 </table>
-<%= button_to 'Checkout', cart.paypal_url(store_url, payment_notifications_url), :method => :post %>
+
+<% form_tag "https://www.sandbox.paypal.com/cgi-bin/webscr" do %>
+  <%= hidden_field_tag :cmd, "_s-xclick" %>
+  <%= hidden_field_tag :encrypted, @cart.paypal_encrypted(store_url, payment_notifications_url) %>
+  <p><%= submit_tag "Checkout" %></p>
+<% end %>
 <%= button_to 'Empty cart', cart, :method => :delete,
               :confirm => 'Are you sure you want to empty your cart?'%>

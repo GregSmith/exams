@@ -26,6 +26,21 @@
       <% end %>
       <%= yield %>
     </div>
+    <% if @status %>
+    <p>there's a status</p>
+    <% end %>
+    <% if @cart %>
+    <p>there's a cart</p>
+    <% end %>
+    <% if @transaction_id %>
+    <p>there's a transactionid</p>
+    <% end %>
+    <% if @cart_id %>
+    <p>there's a cart id</p>
+    <% end %>
+    <% if @testing %>
+    <p>there's a test </p>
+    <% end %>
     <%= debug @cart %>
 
   </div>

@@ -26,7 +26,7 @@ class Cart < ActiveRecord::Base
       cmd: '_cart',
       upload: 1,
       :return => return_url,
-      invoice: id,
+      :invoice => id,
       :notify_url => notify_url,
       :cert_id => "U4DDMNCK5BQP4"
     }

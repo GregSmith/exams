@@ -16,33 +16,28 @@
         <% end %>
       <% end %>
       <%= link_to 'Home', store_path %><br />
+      
       <a href="http://www.">Questions</a><br />
       <a href="http://www.">About</a><br />
       <a href="http://www.">LSAT Prep Courses Online</a><br />
     </div>
     <div id="main">
+      <div id="user_nav">
+          <% if user_signed_in? %>
+              Signed in as <%= current_user.email %>
+              <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+              <% else %>
+                  <%= link_to 'Sign up', new_user_registration_path %> or
+                  <%= link_to 'Sign in', new_user_session_path %>
+                  <%= button_to 'Confirm', store_path, :action => "confirmuser" %>
+          <% end %>
+      </div>
       <% if notice %>
         <p id="notice"><%= notice %></p>
       <% end %>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-    <% if @status %>
-    <p>there's a status</p>
-    <% end %>
-    <% if @cart %>
-    <p>there's a cart</p>
-    <% end %>
-    <% if @transaction_id %>
-    <p>there's a transactionid</p>
-    <% end %>
-    <% if @cart_id %>
-    <p>there's a cart id</p>
-    <% end %>
-    <% if @testing %>
-    <p>there's a test </p>
-    <% end %>
-    <%= debug @cart %>
-
   </div>
 </body>
 </html>

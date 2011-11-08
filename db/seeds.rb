@@ -6,6 +6,8 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 Product.delete_all
+User.delete_all
+Cart.delete_all
 Product.create(:title => 'LSAT 63 - June 2011 Prep Test',
   :description => 
     %{<p>
@@ -55,3 +57,11 @@ Product.create(:title => 'LSAT 59 - December 2009 Prep Test',
       </p>},
   :image_url => '/images/lsat_prep_test_59.jpg',
   :price => 49.95)
+  
+  
+ greg = User.create!(:email => "greg@alpha-score.com",
+               :password => "123456",
+               :password_confirmation => "123456",)
+               
+greg.confirm!
+               

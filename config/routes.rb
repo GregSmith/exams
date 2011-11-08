@@ -1,4 +1,8 @@
 Exams::Application.routes.draw do
+
+  get "store/index"
+  
+  
   resources :payment_notifications
 
   resources :orders
@@ -7,17 +11,21 @@ Exams::Application.routes.draw do
 
   resources :carts
 
-  get "store/index"
   
   resources :products do
     get :who_bought, :on => :member
   end
   
-  root :to => "store#index", :as => "store"
-  
-
   resources :products
-
+  
+  devise_for :users
+  
+  root :to => "store#index"
+  
+  match 'store' => 'store#index'
+  
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

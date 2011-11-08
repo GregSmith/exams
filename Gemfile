@@ -2,7 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
-gem 'sqlite3', :group => :development
+gem 'sqlite3'
+
+gem 'devise'
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
